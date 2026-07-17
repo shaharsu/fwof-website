@@ -160,7 +160,7 @@ a {
   z-index: 1;
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 1.5rem;
 
   @media (max-width: 768px) {
     flex-direction: column-reverse;
