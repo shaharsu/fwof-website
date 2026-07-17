@@ -5,20 +5,22 @@
    Variables
    ============================================================ */
 :root {
-  --color-primary:   #1a2a6c;
-  --color-secondary: #b21f1f;
-  --color-accent:    #4cc9f0;
-  --color-bg:        #f8f9fb;
+  --color-primary:   #1e4db7;
+  --color-primary-dark: #163991;
+  --color-secondary: #f59e0b;
+  --color-secondary-dark: #d97706;
+  --color-accent:    #fbbf24;
+  --color-bg:        #f9fafb;
   --color-white:     #ffffff;
-  --color-text:      #1e1e2e;
-  --color-muted:     #5a6275;
-  --color-border:    #e0e4ef;
+  --color-text:      #111827;
+  --color-muted:     #6b7280;
+  --color-border:    #e5e7eb;
   --color-card:      #ffffff;
-  --color-hero-from: #0d1b4b;
-  --color-hero-to:   #1a3a5c;
+  --color-hero-from: #1e3a8a;
+  --color-hero-to:   #1e4db7;
   --radius:          0.5rem;
-  --shadow-sm:       0 1px 3px rgba(0,0,0,.08);
-  --shadow-md:       0 4px 16px rgba(0,0,0,.1);
+  --shadow-sm:       0 1px 3px rgba(0,0,0,.07);
+  --shadow-md:       0 4px 16px rgba(0,0,0,.09);
   --max-width:       1100px;
 }
 
@@ -72,9 +74,9 @@ a {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(13, 27, 75, 0.95);
+  background: rgba(30, 58, 138, 0.97);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .nav__inner {
@@ -100,7 +102,7 @@ a {
   list-style: none;
 
   a {
-    color: rgba(255,255,255,.85);
+    color: rgba(255,255,255,.8);
     font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: .03em;
@@ -108,7 +110,7 @@ a {
     transition: color .2s;
 
     &:hover {
-      color: #fff;
+      color: var(--color-accent);
       text-decoration: none;
     }
   }
@@ -119,7 +121,7 @@ a {
    ============================================================ */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-hero-from) 0%, var(--color-hero-to) 60%, #0e3854 100%);
+  background: linear-gradient(135deg, var(--color-hero-from) 0%, var(--color-hero-to) 60%, #2563eb 100%);
   display: flex;
   align-items: center;
   position: relative;
@@ -127,20 +129,20 @@ a {
   padding-top: 4rem;
 }
 
-/* Decorative blobs — suggest disordered/dynamic structure */
+/* Decorative blobs */
 .hero::before,
 .hero::after {
   content: '';
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.18;
+  opacity: 0.2;
 }
 
 .hero::before {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, #4cc9f0 0%, transparent 70%);
+  background: radial-gradient(circle, #fbbf24 0%, transparent 70%);
   top: -100px;
   right: -100px;
 }
@@ -148,7 +150,7 @@ a {
 .hero::after {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, #b21f1f 0%, transparent 70%);
+  background: radial-gradient(circle, #93c5fd 0%, transparent 70%);
   bottom: -80px;
   left: 10%;
 }
@@ -167,7 +169,7 @@ a {
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: 1.25rem;
-  border: 1px solid rgba(76,201,240,.4);
+  border: 1px solid rgba(251,191,36,.4);
   padding: .3rem .85rem;
   border-radius: 2rem;
 }
@@ -207,9 +209,7 @@ a {
     font-size: 0.95rem;
     color: rgba(255,255,255,.85);
 
-    .icon {
-      font-size: 1.1rem;
-    }
+    .icon { font-size: 1.1rem; }
 
     strong {
       font-weight: 600;
@@ -243,14 +243,14 @@ a {
 }
 
 .btn--primary {
-  background: var(--color-accent);
-  color: var(--color-primary);
+  background: var(--color-secondary);
+  color: #fff;
 
   &:hover {
-    background: #7dd9f5;
+    background: var(--color-secondary-dark);
     text-decoration: none;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(76,201,240,.35);
+    box-shadow: 0 6px 20px rgba(245,158,11,.35);
   }
 }
 
@@ -260,8 +260,9 @@ a {
   color: #fff;
 
   &:hover {
-    border-color: #fff;
-    background: rgba(255,255,255,.08);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(251,191,36,.08);
     text-decoration: none;
   }
 }
@@ -272,11 +273,11 @@ a {
   border-color: var(--color-secondary);
 
   &:hover {
-    background: #d42424;
-    border-color: #d42424;
+    background: var(--color-secondary-dark);
+    border-color: var(--color-secondary-dark);
     text-decoration: none;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(178,31,31,.35);
+    box-shadow: 0 6px 20px rgba(245,158,11,.35);
   }
 }
 
@@ -293,13 +294,8 @@ a {
   font-weight: 700;
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 0.6rem;
-  /* Use primary color for dark sections */
-}
-
-.section-header--dark .section-header__eyebrow {
   color: var(--color-secondary);
+  margin-bottom: 0.6rem;
 }
 
 .section-header__title {
@@ -342,7 +338,7 @@ a {
 }
 
 .about__highlight {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #0e3854 100%);
+  background: linear-gradient(135deg, var(--color-hero-from) 0%, var(--color-hero-to) 100%);
   color: #fff;
   padding: 2rem;
   border-radius: var(--radius);
@@ -389,7 +385,7 @@ a {
    Registration banner
    ============================================================ */
 .reg-banner {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #8b0000 100%);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #d97706 100%);
   padding: 3rem 0;
   text-align: center;
 }
@@ -398,22 +394,22 @@ a {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 700;
-  color: #fff;
+  color: var(--color-hero-from);
   margin-bottom: 0.5rem;
 }
 
 .reg-banner__sub {
-  color: rgba(255,255,255,.85);
+  color: rgba(30,58,138,.8);
   font-size: 1.05rem;
   margin-bottom: 0.3rem;
 }
 
 .reg-banner__deadline {
   display: inline-block;
-  background: rgba(255,255,255,.15);
-  color: #fff;
+  background: rgba(30,58,138,.15);
+  color: var(--color-hero-from);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: .05em;
   padding: .3rem .85rem;
   border-radius: 2rem;
@@ -423,7 +419,18 @@ a {
 .reg-banner__note {
   margin-top: 1rem;
   font-size: 0.85rem;
-  color: rgba(255,255,255,.7);
+  color: rgba(30,58,138,.65);
+}
+
+/* Register button on yellow banner — use blue */
+.reg-banner .btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+
+  &:hover {
+    background: var(--color-primary-dark);
+    box-shadow: 0 6px 20px rgba(30,77,183,.35);
+  }
 }
 
 /* ============================================================
@@ -441,7 +448,7 @@ a {
   border-radius: var(--radius);
   padding: 1.25rem 1.25rem 1.25rem 1.5rem;
   box-shadow: var(--shadow-sm);
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid var(--color-secondary);
   transition: box-shadow .2s, transform .2s;
 
   &:hover {
@@ -450,8 +457,8 @@ a {
   }
 
   &--keynote {
-    border-left-color: var(--color-secondary);
-    background: linear-gradient(135deg, #fff9f9 0%, #fff 100%);
+    border-left-color: var(--color-primary);
+    background: linear-gradient(135deg, #eff6ff 0%, #fff 100%);
   }
 }
 
@@ -474,7 +481,7 @@ a {
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
-  background: var(--color-secondary);
+  background: var(--color-primary);
   color: #fff;
   padding: .15rem .5rem;
   border-radius: 2rem;
@@ -544,15 +551,6 @@ a {
   align-items: start;
 
   &:last-child { border-bottom: none; }
-
-  &--parallel {
-    background: #f0f7ff;
-    margin: 0 -1rem;
-    padding: 1rem;
-    border-radius: var(--radius);
-    border-bottom: none;
-    margin-bottom: 0.5rem;
-  }
 }
 
 .schedule-item__time {
@@ -577,16 +575,6 @@ a {
   }
 }
 
-.parallel-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  display: block;
-  margin-bottom: .3rem;
-}
-
 .parallel-events {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -606,8 +594,8 @@ a {
   font-size: 0.875rem;
   font-weight: 500;
 
-  &:first-child { border-color: var(--color-accent); }
-  &:last-child  { border-color: var(--color-secondary); }
+  &:first-child { border-color: var(--color-secondary); }
+  &:last-child  { border-color: var(--color-primary); }
 }
 
 /* ============================================================
@@ -651,7 +639,7 @@ a {
     color: var(--color-primary);
     font-weight: 500;
 
-    &:hover { color: var(--color-secondary); }
+    &:hover { color: var(--color-secondary-dark); }
   }
 }
 
@@ -673,8 +661,8 @@ a {
    Footer
    ============================================================ */
 .footer {
-  background: var(--color-primary);
-  color: rgba(255,255,255,.65);
+  background: var(--color-hero-from);
+  color: rgba(255,255,255,.6);
   padding: 2.5rem 0;
   text-align: center;
   font-size: 0.875rem;
@@ -691,7 +679,7 @@ a {
 .footer__thanks {
   margin-top: 1rem;
   font-size: 0.8rem;
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.4);
 }
 
 /* ============================================================
