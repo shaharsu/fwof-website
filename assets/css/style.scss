@@ -121,22 +121,24 @@ a {
    ============================================================ */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-hero-from) 0%, var(--color-hero-to) 60%, #2563eb 100%);
+  background: var(--color-white);
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
   padding-top: 4rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
-/* Decorative blobs */
+/* Subtle decorative blobs */
 .hero::before,
 .hero::after {
   content: '';
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.2;
+  filter: blur(90px);
+  opacity: 0.09;
+  pointer-events: none;
 }
 
 .hero::before {
@@ -170,7 +172,7 @@ a {
 
 .hero__content {
   flex: 1;
-  color: #fff;
+  color: var(--color-text);
 }
 
 .hero__logo {
@@ -180,7 +182,7 @@ a {
     width: clamp(180px, 22vw, 300px);
     height: clamp(180px, 22vw, 300px);
     object-fit: contain;
-    filter: drop-shadow(0 8px 32px rgba(0,0,0,.35));
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,.12));
   }
 
   @media (max-width: 768px) {
@@ -194,9 +196,9 @@ a {
   font-weight: 600;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-secondary-dark);
   margin-bottom: 1.25rem;
-  border: 1px solid rgba(251,191,36,.4);
+  border: 1px solid rgba(217,119,6,.3);
   padding: .3rem .85rem;
   border-radius: 2rem;
 }
@@ -207,18 +209,18 @@ a {
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 0.5rem;
-  color: #fff;
+  color: var(--color-primary);
 
   em {
     font-style: italic;
-    color: var(--color-accent);
+    color: var(--color-secondary-dark);
   }
 }
 
 .hero__subtitle {
   font-size: clamp(1rem, 2.5vw, 1.35rem);
   font-weight: 300;
-  color: rgba(255,255,255,.8);
+  color: var(--color-muted);
   margin-bottom: 1rem;
   max-width: 640px;
 }
@@ -234,13 +236,13 @@ a {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.95rem;
-    color: rgba(255,255,255,.85);
+    color: var(--color-muted);
 
     .icon { font-size: 1.1rem; }
 
     strong {
       font-weight: 600;
-      color: #fff;
+      color: var(--color-text);
     }
   }
 }
@@ -283,13 +285,13 @@ a {
 
 .btn--outline {
   background: transparent;
-  border-color: rgba(255,255,255,.5);
-  color: #fff;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 
   &:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-    background: rgba(251,191,36,.08);
+    border-color: var(--color-secondary-dark);
+    color: var(--color-secondary-dark);
+    background: rgba(217,119,6,.06);
     text-decoration: none;
   }
 }
