@@ -1,0 +1,18 @@
+title: "Function without Form"
+description: "Northeast Regional Disordered Proteins Workshop — Syracuse, NY | September 18–19, 2026"
+baseurl: "/fwof-website"
+url: "https://shaharsu.github.io"
+
+# Build settings
+theme: null
+plugins: []
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+# Sass
+sass:
+  style: compressed
