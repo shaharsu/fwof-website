@@ -463,18 +463,17 @@ a {
 }
 
 .speaker-card__photo {
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: top;
+  object-position: top center;
   margin-bottom: 0.75rem;
   border: 2px solid var(--color-border);
+  flex-shrink: 0;
 }
 
 .speaker-card--keynote .speaker-card__photo {
-  width: 90px;
-  height: 90px;
   border-color: var(--color-primary);
 }
 
