@@ -462,6 +462,22 @@ a {
   }
 }
 
+.speaker-card__photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 0.75rem;
+  border: 2px solid var(--color-border);
+}
+
+.speaker-card--keynote .speaker-card__photo {
+  width: 90px;
+  height: 90px;
+  border-color: var(--color-primary);
+}
+
 .speaker-card__name {
   font-weight: 700;
   font-size: 0.975rem;
